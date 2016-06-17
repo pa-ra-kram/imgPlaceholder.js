@@ -47,7 +47,7 @@ for(var j = 0; j < images.length; j++) {
         //If text color is passed, and is a valid color, use it. Else, use default color, #777.
         col = (('color' in arr) && (/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(arr['color']))) ? arr['color'] : col;
         //If background color is passed, and is a valid color, use it. Else, use default color, #CCC.
-        bgcol = (('color' in arr) && (/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(arr['bg']))) ? arr['bg'] : bgcol;
+        bgcol = (('bg' in arr) && (/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(arr['bg']))) ? arr['bg'] : bgcol;
         //If image text is passed, use it. Else, use default, width x height.
         txt = ('text' in arr) ? arr['text'] : txt;
 
