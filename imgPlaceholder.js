@@ -38,27 +38,27 @@ for(var j = 0; j < images.length; j++) {
             }
         }
         //Change default color and text if you want to
-        var col = '#333'; //Default text color
+        var col = '#777'; //Default text color
         var bgcol = '#ccc'; //Default background color
         var txt = w+'x'+h; //Default image text, width x height. Ex: 300x200
         var size = 11; //Default font size
-        var font = 'Helvetica';
+        var font = 'Arial';
 
-        //If text color is passed, and is a valid color, use it. Else, use default color, #333.
+        //If text color is passed, and is a valid color, use it. Else, use default color, #777.
         col = (('color' in arr) && (/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(arr['color']))) ? arr['color'] : col;
         //If background color is passed, and is a valid color, use it. Else, use default color, #CCC.
         bgcol = (('color' in arr) && (/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(arr['bg']))) ? arr['bg'] : bgcol;
         //If image text is passed, use it. Else, use default, width x height.
         txt = ('text' in arr) ? arr['text'] : txt;
 
-        //If font is passed, use it. Else, use default font, Helvetica.
+        //If font is passed, use it. Else, use default font, Arial.
         font = ('font' in arr) ? arr['font'] : font;
 
         //If font size is not provided, use default font size, 11px
         size = (('size' in arr) && (/(\d+)$/i.test(arr['size']))) ? arr['size'] : size;
 
         //Create the svg
-        var svg = '<svg width="'+w+'" height="'+h+'" xmlns="http://www.w3.org/2000/svg"><defs><style type="text/css">.imgsvg text { fill:'+col+';font-weight:bold;font-family:'+font+';font-size:'+size+'pt } </style></defs><g class="imgsvg"><rect width="100%" height="100%" fill="'+bgcol+'"></rect><text x="'+w/2+'" y="'+h/2+'" text-anchor="middle" alignment-baseline="central">'+txt+'</text></g></svg>';
+        var svg = '<svg width="'+w+'" height="'+h+'" xmlns="http://www.w3.org/2000/svg"><defs><style type="text/css">.imgsvg text { fill:'+col+';font-family:'+font+';font-size:'+size+'pt } </style></defs><g class="imgsvg"><rect width="100%" height="100%" fill="'+bgcol+'"></rect><text x="'+w/2+'" y="'+h/2+'" text-anchor="middle" alignment-baseline="central">'+txt+'</text></g></svg>';
 
         //Replace source attribute of image with svg
         images[j].setAttribute('src',"data:image/svg+xml;charset=utf-8,"+svg);
