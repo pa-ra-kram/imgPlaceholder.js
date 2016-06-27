@@ -1,4 +1,7 @@
 # imgPlaceholder.js
+EDIT: Not working in Firefox. Will fix this soon.
+
+
 A simple javascript plugin to create dynamic placeholder images.
 Usage:
 
